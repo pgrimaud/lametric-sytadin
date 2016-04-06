@@ -1,5 +1,5 @@
 {
     "require": {
-        "fabpot/goutte": "^3.1"
+        "pgrimaud/sytadin": "^1.0"
     }
 }
