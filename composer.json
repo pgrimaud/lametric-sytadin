@@ -1,5 +1,10 @@
 {
-    "require": {
-        "pgrimaud/sytadin": "^1.0"
+  "require": {
+    "pgrimaud/sytadin": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lametric\\": "src/"
     }
+  }
 }
