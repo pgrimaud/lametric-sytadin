@@ -4,6 +4,10 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Lametric\Sytadin;
 
+ini_set('display_errors', 1);
+
+echo '<pre>';
+
 try {
     //sanitize parameters
     $parameters = array_map('htmlspecialchars', $_GET);
@@ -12,16 +16,12 @@ try {
     $route = new Lametric\Sytadin\Route($parameters);
     $route->validateParameters();
 
+    //api call
+    $api = new \Sytadin\Api();
+    $route->getApiValues($api);
+    
+    echo 'ok';
 } catch (Exception $e) {
-    echo ':(';
+    $response = new Lametric\Sytadin\Response();
+    echo $response->returnError();
 }
-
-echo '{
-    "frames": [
-        {
-            "index": 0,
-            "text": "Sytadin",
-            "icon": "a2809"
-        } 
-    ] 
-}';

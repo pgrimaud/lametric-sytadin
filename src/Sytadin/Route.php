@@ -1,6 +1,8 @@
 <?php
 namespace Lametric\Sytadin;
 
+use Sytadin\Api;
+
 class Route
 {
     /**
@@ -30,5 +32,10 @@ class Route
                 throw new \InvalidArgumentException();
             }
         }
+    }
+
+    public function getApiValues(Api $api)
+    {
+        $this->mapper = $api;
     }
 }

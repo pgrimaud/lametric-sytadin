@@ -3,6 +3,8 @@ namespace Lametric\Sytadin;
 
 class Icon
 {
+    const ICON_ERROR = 'i1';
+
     /**
      * @var integer
      */
