@@ -11,6 +11,11 @@ class Route
     private $parameters = [];
 
     /**
+     * @var Api
+     */
+    private $api;
+
+    /**
      * Route constructor.
      * @param array $parameters
      */
@@ -34,8 +39,34 @@ class Route
         }
     }
 
-    public function getApiValues(Api $api)
+    /**
+     * @return array
+     */
+    private function parametersMapper()
     {
-        $this->mapper = $api;
+        $mapping = [
+            'way' => 'direction',
+            'start' => 'start',
+            'end' => 'end'
+        ];
+
+        $parameters = [];
+
+        foreach ($this->parameters as $field => $parameter) {
+            $parameters[$mapping[$field]] = $parameter;
+        };
+
+        return $parameters;
+    }
+
+    /**
+     * @param Api $api
+     * @return \Sytadin\Route
+     */
+    public function setApi(Api $api)
+    {
+        $this->api = $api;
+        $this->api->setParameters($this->parametersMapper());
+        return $this->api->getRoute();
     }
 }

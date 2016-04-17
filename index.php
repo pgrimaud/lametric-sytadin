@@ -6,8 +6,6 @@ use Lametric\Sytadin;
 
 ini_set('display_errors', 1);
 
-echo '<pre>';
-
 try {
     //sanitize parameters
     $parameters = array_map('htmlspecialchars', $_GET);
@@ -18,9 +16,13 @@ try {
 
     //api call
     $api = new \Sytadin\Api();
-    $route->getApiValues($api);
-    
-    echo 'ok';
+    $data = $route->setApi($api);
+
+    $response = new Lametric\Sytadin\Response();
+    $response->setBody($data);
+
+    echo $response->returnResponse();
+
 } catch (Exception $e) {
     $response = new Lametric\Sytadin\Response();
     echo $response->returnError();

@@ -4,11 +4,6 @@ namespace Lametric\Sytadin;
 class Response
 {
     /**
-     * @var Icon
-     */
-    private $icon;
-
-    /**
      * @var mixed
      */
     private $body;
@@ -47,19 +42,11 @@ class Response
     }
 
     /**
-     * @param Icon $icon
+     * @param \Sytadin\Route $route
      */
-    public function setIcon($icon)
+    public function setBody(\Sytadin\Route $route)
     {
-        $this->icon = $icon;
-    }
-
-    /**
-     * @param mixed $body
-     */
-    public function setBody($body)
-    {
-        $this->body = json_decode($body, true);
+        $this->body = $route;
     }
 
     /**
@@ -67,24 +54,37 @@ class Response
      */
     public function returnResponse()
     {
-        $destination = (string)$this->body['response']['schedules'][0]['destination'];
-        $message = str_replace('mn', 'min', (string)$this->body['response']['schedules'][0]['message']);
+        $destination = ucwords($this->body->getStart()->getName()) . ' - ' . ucwords($this->body->getEnd()->getName());
+        $delay = $this->calculateDelay($this->body->getTime(), $this->body->getTimeReference());
+
+        $icon = Icon::getDelayIcon($delay);
 
         $data = [
             'frames' => [
                 [
                     'index' => 0,
                     'text' => $destination,
-                    'icon' => $this->icon->getIconCode()
+                    'icon' => $icon
                 ],
                 [
                     'index' => 1,
-                    'text' => $message,
-                    'icon' => $this->icon->getIconCode()
+                    'text' => 'Delay : ' . $delay,
+                    'icon' => $icon
                 ]
             ]
         ];
 
         return $this->asJson($data);
+    }
+
+    /**
+     * @param $time int
+     * @param $referenceTime int
+     * @return int
+     */
+    private function calculateDelay($time, $referenceTime)
+    {
+        $delay = (int)($time - $referenceTime);
+        return $delay < 0 ? 0 : $delay;
     }
 }
