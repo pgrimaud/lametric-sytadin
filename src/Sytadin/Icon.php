@@ -3,11 +3,22 @@ namespace Lametric\Sytadin;
 
 class Icon
 {
-    const ICON_ERROR = 'i1';
+    const ICON_ERROR = 'i2809';
 
-    public static function getDelayIcon()
+    /**
+     * @param $delay
+     * @param $time
+     * @return string
+     */
+    public static function getDelayIcon($delay, $time)
     {
-        return 'i1';
+        if ($delay == 0) {
+            return 'i2817';
+        } elseif ($delay < $time) {
+            return 'i2818';
+        } else {
+            return 'i2819';
+        }
     }
 
 }
