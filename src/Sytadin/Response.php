@@ -69,7 +69,7 @@ class Response
                 ],
                 [
                     'index' => 1,
-                    'text' => $time . ' mn',
+                    'text' => $time . ' mins',
                     'icon' => $icon
                 ]
             ]
