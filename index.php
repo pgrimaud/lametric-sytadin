@@ -4,8 +4,6 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Lametric\Sytadin;
 
-ini_set('display_errors', 1);
-
 try {
     //sanitize parameters
     $parameters = array_map('htmlspecialchars', $_GET);
