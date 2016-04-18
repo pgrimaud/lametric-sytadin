@@ -25,6 +25,10 @@ If the traffic is **heavy**, you will see* :
 
 *Numbers given as example 
 
-## Feedback
+# Feedback
 
 If you need help, [create an issue](https://github.com/pgrimaud/lametric-sytadin/issues) or contact us on [Twitter](http://twitter.com/nilzenx)
+
+# More info
+
+Based on [Sytadin SDK](https://github.com/pgrimaud/lametric-sytadin)
