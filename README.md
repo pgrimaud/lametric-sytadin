@@ -31,4 +31,4 @@ If you need help, [create an issue](https://github.com/pgrimaud/lametric-sytadin
 
 # More info
 
-Based on [Sytadin SDK](https://github.com/pgrimaud/lametric-sytadin)
+Based on [Sytadin SDK](https://github.com/pgrimaud/sytadin)
