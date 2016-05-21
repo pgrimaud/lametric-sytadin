@@ -27,7 +27,7 @@ If the traffic is **heavy**, you will see* :
 
 # Feedback
 
-If you need help, [create an issue](https://github.com/pgrimaud/lametric-sytadin/issues) or contact us on [Twitter](http://twitter.com/nilzenx)
+If you need help, [create an issue](https://github.com/pgrimaud/lametric-sytadin/issues) or contact us on [Twitter](http://twitter.com/pgrimaud_)
 
 # More info
 
