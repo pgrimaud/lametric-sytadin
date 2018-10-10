@@ -1,4 +1,5 @@
 <?php
+
 namespace Lametric\Sytadin;
 
 use Sytadin\Api;
@@ -45,9 +46,9 @@ class Route
     private function parametersMapper()
     {
         $mapping = [
-            'way' => 'direction',
+            'way'   => 'direction',
             'start' => 'start',
-            'end' => 'end'
+            'end'   => 'end'
         ];
 
         $parameters = [];

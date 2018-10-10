@@ -1,6 +1,7 @@
 {
   "require": {
-    "pgrimaud/sytadin": "^1.1"
+    "pgrimaud/sytadin": "^1.1",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {

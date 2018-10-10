@@ -1,4 +1,5 @@
 <?php
+
 namespace Lametric\Sytadin;
 
 class Response
@@ -25,8 +26,8 @@ class Response
             'frames' => [
                 [
                     'index' => 0,
-                    'text' => 'Please check app configuration',
-                    'icon' => Icon::ICON_ERROR
+                    'text'  => 'Please check app configuration',
+                    'icon'  => Icon::ICON_ERROR
                 ]
             ]
         ]);
@@ -55,7 +56,7 @@ class Response
     public function returnResponse()
     {
         $destination = ucwords($this->body->getStart()->getName()) . '-' . ucwords($this->body->getEnd()->getName());
-        $delay = $this->calculateDelay($this->body->getTime(), $this->body->getTimeReference());
+        $delay       = $this->calculateDelay($this->body->getTime(), $this->body->getTimeReference());
 
         $icon = Icon::getDelayIcon($delay, $this->body->getTime());
         $time = $this->body->getTime($this->body->getTime(), $this->body->getTimeReference());
@@ -64,13 +65,13 @@ class Response
             'frames' => [
                 [
                     'index' => 0,
-                    'text' => $destination,
-                    'icon' => Icon::ICON_ERROR
+                    'text'  => $destination,
+                    'icon'  => Icon::ICON_ERROR
                 ],
                 [
                     'index' => 1,
-                    'text' => $time . ' mins',
-                    'icon' => $icon
+                    'text'  => $time . ' mins',
+                    'icon'  => $icon
                 ]
             ]
         ];

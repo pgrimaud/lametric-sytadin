@@ -20,5 +20,4 @@ class Icon
             return 'i2819';
         }
     }
-
 }
