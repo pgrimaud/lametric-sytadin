@@ -2,8 +2,6 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Lametric\Sytadin;
-
 try {
     //sanitize parameters
     $parameters = array_map('htmlspecialchars', $_GET);
@@ -13,7 +11,7 @@ try {
     $route->validateParameters();
 
     //api call
-    $api = new \Sytadin\Api();
+    $api  = new \Sytadin\Api();
     $data = $route->setApi($api);
 
     $response = new Lametric\Sytadin\Response();
