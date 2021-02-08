@@ -1,6 +1,6 @@
 <?php
 
-use Sytadin\{Response, Route};
+use Lametric\{Response, Route};
 
 require __DIR__ . '/../vendor/autoload.php';
 $config = require_once __DIR__ . '/../config/parameters.php';

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sytadin;
+namespace Lametric;
 
 class Response
 {
