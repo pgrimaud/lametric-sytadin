@@ -68,7 +68,7 @@ class Response
                 [
                     'index' => 0,
                     'text'  => $destination,
-                    'icon'  => Icon::ICON_ERROR,
+                    'icon'  => $icon,
                 ],
                 [
                     'index' => 1,
