@@ -1,11 +1,13 @@
 {
   "require": {
+    "php": ">=8.0",
+    "ext-json": "*",
     "pgrimaud/sytadin": "^1.1",
-    "ext-json": "*"
+    "sentry/sdk": "^3.1"
   },
   "autoload": {
     "psr-4": {
-      "Lametric\\": "src/"
+      "Sytadin\\": "src/Sytadin"
     }
   }
 }

@@ -1,6 +1,8 @@
 <?php
 
-namespace Lametric\Sytadin;
+declare(strict_types=1);
+
+namespace Sytadin;
 
 class Response
 {
