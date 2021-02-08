@@ -9,13 +9,14 @@ class Icon
     const ICON_ERROR = 'i2809';
 
     /**
-     * @param $delay
-     * @param $time
+     * @param int $delay
+     * @param int $time
+     *
      * @return string
      */
-    public static function getDelayIcon($delay, $time)
+    public static function getDelayIcon(int $delay, int $time): string
     {
-        if ($delay == 0) {
+        if ($delay === 0) {
             return 'i2817';
         } elseif ($delay < $time) {
             return 'i2818';

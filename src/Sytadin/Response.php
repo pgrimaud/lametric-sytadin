@@ -20,18 +20,18 @@ class Response
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function returnError()
+    public function returnError(): string
     {
         return $this->asJson([
             'frames' => [
                 [
                     'index' => 0,
                     'text'  => 'Please check app configuration',
-                    'icon'  => Icon::ICON_ERROR
-                ]
-            ]
+                    'icon'  => Icon::ICON_ERROR,
+                ],
+            ],
         ]);
     }
 
@@ -39,9 +39,9 @@ class Response
      * @param array $data
      * @return mixed
      */
-    public function asJson($data = array())
+    public function asJson($data = []): string
     {
-        return json_encode($data, JSON_PRETTY_PRINT);
+        return json_encode($data);
     }
 
     /**
@@ -53,9 +53,9 @@ class Response
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function returnResponse()
+    public function returnResponse(): string
     {
         $destination = ucwords($this->body->getStart()->getName()) . '-' . ucwords($this->body->getEnd()->getName());
         $delay       = $this->calculateDelay($this->body->getTime(), $this->body->getTimeReference());
@@ -68,14 +68,14 @@ class Response
                 [
                     'index' => 0,
                     'text'  => $destination,
-                    'icon'  => Icon::ICON_ERROR
+                    'icon'  => Icon::ICON_ERROR,
                 ],
                 [
                     'index' => 1,
                     'text'  => $time . ' mins',
-                    'icon'  => $icon
-                ]
-            ]
+                    'icon'  => $icon,
+                ],
+            ],
         ];
 
         return $this->asJson($data);
@@ -86,7 +86,7 @@ class Response
      * @param $referenceTime int
      * @return int
      */
-    private function calculateDelay($time, $referenceTime)
+    private function calculateDelay(int $time, int $referenceTime): int
     {
         $delay = (int)($time - $referenceTime);
         return $delay < 0 ? 0 : $delay;

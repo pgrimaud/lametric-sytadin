@@ -21,7 +21,7 @@ class Route
         $this->parameters = $parameters;
     }
 
-    public function validateParameters()
+    public function validateParameters(): void
     {
         $fields = [
             'way',
