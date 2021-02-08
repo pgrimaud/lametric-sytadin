@@ -4,15 +4,16 @@ declare(strict_types=1);
 
 namespace Lametric;
 
+use Sytadin\Api;
+
 class Route
 {
     /**
      * @var array
      */
-    private array $parameters = [];
+    private array $parameters;
 
     /**
-     * Route constructor.
      * @param array $parameters
      */
     public function __construct($parameters = [])
@@ -38,7 +39,7 @@ class Route
     /**
      * @return array
      */
-    private function parametersMapper()
+    private function parametersMapper(): array
     {
         $mapping = [
             'way'   => 'direction',
@@ -57,12 +58,12 @@ class Route
 
     /**
      * @param Api $api
+     *
      * @return \Sytadin\Route
      */
-    public function setApi(Api $api)
+    public function setApi(Api $api): \Sytadin\Route
     {
-        $this->api = $api;
-        $this->api->setParameters($this->parametersMapper());
-        return $this->api->getRoute();
+        $api->setParameters($this->parametersMapper());
+        return $api->getRoute();
     }
 }
