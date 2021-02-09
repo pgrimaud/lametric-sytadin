@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c870d78f48435ee04465b852dfb94e2f",
+    "content-hash": "9871adfdf835dcbf3139a338d8ff5922",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -447,24 +447,24 @@
         },
         {
             "name": "pgrimaud/sytadin",
-            "version": "1.2.3",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pgrimaud/sytadin.git",
-                "reference": "b37b00562299a8774d2676c1d023c963d2304b43"
+                "reference": "3ccedbdeb8fe59d7afb8dac077b95d736a8669ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pgrimaud/sytadin/zipball/b37b00562299a8774d2676c1d023c963d2304b43",
-                "reference": "b37b00562299a8774d2676c1d023c963d2304b43",
+                "url": "https://api.github.com/repos/pgrimaud/sytadin/zipball/3ccedbdeb8fe59d7afb8dac077b95d736a8669ba",
+                "reference": "3ccedbdeb8fe59d7afb8dac077b95d736a8669ba",
                 "shasum": ""
             },
             "require": {
-                "fabpot/goutte": "^3.1"
+                "fabpot/goutte": "^3.1",
+                "php": ">=7.4"
             },
             "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "phpunit/phpunit": "5.4.*"
+                "phpunit/phpunit": "^8.0|^9.0"
             },
             "type": "library",
             "autoload": {
@@ -486,9 +486,19 @@
             "homepage": "https://github.com/pgrimaud/sytadin",
             "support": {
                 "issues": "https://github.com/pgrimaud/sytadin/issues",
-                "source": "https://github.com/pgrimaud/sytadin/tree/master"
+                "source": "https://github.com/pgrimaud/sytadin/tree/2.0.0"
             },
-            "time": "2017-12-05T15:29:32+00:00"
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/grimaudpierre",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/pgrimaud",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-02-09T20:17:42+00:00"
         },
         {
             "name": "php-http/client-common",

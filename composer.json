@@ -2,7 +2,7 @@
   "require": {
     "php": ">=8.0",
     "ext-json": "*",
-    "pgrimaud/sytadin": "^1.1",
+    "pgrimaud/sytadin": "^2.0",
     "sentry/sdk": "^3.1"
   },
   "autoload": {
